@@ -1,163 +1,143 @@
+/* Home Container */
 .home {
   min-height: 100vh;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  padding-top: 80px;
+  background: var(--bg-primary);
+  /* Importante: permite que la imagen vaya debajo del header */
+  padding-top: 0;
 }
 
-.pixel-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, #ff3333, #ff0000);
+/* Hero Section que ocupa toda la pantalla incluyendo debajo del header */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-primary);
+  /* La imagen empieza desde arriba, debajo del header */
+  margin-top: 0;
+  padding-top: 0;
 }
 
-.pixel-grid {
+.hero-background {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background-image: 
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 20px,
-      rgba(0, 0, 0, 0.3) 20px,
-      rgba(0, 0, 0, 0.3) 25px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 20px,
-      rgba(0, 0, 0, 0.3) 20px,
-      rgba(0, 0, 0, 0.3) 25px
-    );
-  animation: pixelMove 10s linear infinite;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
 }
 
-@keyframes pixelMove {
-  0% { transform: translate(0, 0); }
-  100% { transform: translate(25px, 25px); }
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0.9) contrast(1.1);
+  transition: all 0.3s ease;
 }
 
-.main-content {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 0.05) 0%,
+    rgba(229, 62, 62, 0.02) 50%,
+    rgba(10, 10, 10, 0.08) 100%
+  );
   z-index: 2;
-  padding: 50px 0;
 }
 
-.center-logos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 50px;
-}
-
-.infinity-logo {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 40px;
-  border-radius: 10px;
-  border: 3px solid #ff3333;
-}
-
-.logo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.logo-container .logo-text {
-  font-size: 48px;
-  font-weight: bold;
-  color: #ff3333;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.logo-container .logo-symbol {
-  font-size: 60px;
-  color: #ff3333;
-  margin-top: 10px;
-}
-
-.gaming-logos {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.gaming-logo {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 30px;
-  border-radius: 10px;
-  border: 2px solid #333;
-  text-align: center;
-  min-width: 200px;
-}
-
-.gaming-logo span {
-  display: block;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.gaming-logo small {
-  font-size: 12px;
-  color: #ccc;
-}
-
+/* Sponsors Section */
 .sponsors-section {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 40px 0;
+  background: var(--bg-secondary);
+  padding: 4rem 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  z-index: 2;
+  z-index: 3;
 }
 
 .sponsors-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 80px;
+  gap: 3rem;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .sponsor-logo {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 200px;
-  height: 100px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.sponsor-logo:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(229, 62, 62, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .sponsor-logo img {
-  max-width: 100%;
-  max-height: 100%;
+  width: 200px;
+  height: 100px;
   object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: filter 0.3s ease;
 }
 
+.sponsor-logo:hover img {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .gaming-logos {
-    flex-direction: column;
-    align-items: center;
+  .hero-section {
+    height: 90vh;
   }
-  
+
   .sponsors-container {
-    flex-direction: column;
-    gap: 30px;
+    gap: 2rem;
   }
+
+  .sponsor-logo img {
+    width: 150px;
+    height: 75px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: 85vh;
+  }
+
+  .sponsors-section {
+    padding: 3rem 1rem;
+  }
+
+  .sponsor-logo {
+    padding: 1rem;
+  }
+
+  .sponsor-logo img {
+    width: 120px;
+    height: 60px;
+  }
+}
+
+/* Efecto hover opcional para la imagen */
+.hero-image:hover {
+  transform: scale(1.01);
+  filter: brightness(1) contrast(1.15);
 }

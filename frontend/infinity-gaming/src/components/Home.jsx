@@ -25,30 +25,15 @@ const Home = () => {
 
   return (
     <div className="home">
-      <div className="pixel-background">
-        <div className="pixel-grid"></div>
-      </div>
-      
-      <div className="main-content">
-        <div className="center-logos">
-          <div className="infinity-logo">
-            <div className="logo-container">
-              <div className="logo-text">INFINITY</div>
-              <div className="logo-symbol">⚡</div>
-            </div>
-          </div>
-          
-          <div className="gaming-logos">
-            <div className="gaming-logo">
-              <span>🎮 INFINITY</span>
-              <span>GAMING CENTER</span>
-            </div>
-            <div className="gaming-logo">
-              <span>🎯 EDN</span>
-              <span>PRODUCCIONES</span>
-              <small>ESPORTS & GAMING</small>
-            </div>
-          </div>
+      {/* Hero Section con solo la imagen de fondo */}
+      <div className="hero-section">
+        <div className="hero-background">
+          <img 
+            src="https://pbs.twimg.com/profile_banners/1575021617100513280/1751527636/1500x500" 
+            alt="Sentinels Banner" 
+            className="hero-image"
+          />
+          <div className="hero-overlay"></div>
         </div>
       </div>
       
