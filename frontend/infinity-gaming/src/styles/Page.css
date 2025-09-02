@@ -1,0 +1,38 @@
+.page {
+  min-height: 100vh;
+  padding-top: 100px;
+  background: linear-gradient(135deg, #1a1a1a, #333);
+}
+
+.page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.page-content h1 {
+  font-size: 48px;
+  color: #ff3333;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.page-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #ccc;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  margin-top: 40px;
+  text-align: left;
+  display: inline-block;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: #fff;
+}
