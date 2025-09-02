@@ -1,0 +1,116 @@
+:root {
+  /* Gaming Color Palette */
+  --primary-bg: #0a0a0a;
+  --secondary-bg: #1a1a1a;
+  --card-bg: rgba(26, 26, 26, 0.9);
+  --overlay-bg: rgba(0, 0, 0, 0.8);
+  
+  /* Neon Accents */
+  --neon-blue: #00d4ff;
+  --neon-cyan: #00ffff;
+  --neon-purple: #8b00ff;
+  --neon-pink: #ff00aa;
+  
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --text-muted: #666666;
+  
+  /* Gaming Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+  --gradient-secondary: linear-gradient(135deg, var(--neon-cyan), var(--neon-pink));
+  --gradient-dark: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+  
+  /* Shadows */
+  --shadow-neon: 0 0 20px rgba(0, 212, 255, 0.3);
+  --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --shadow-text: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  
+  /* Borders */
+  --border-neon: 2px solid var(--neon-blue);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  --spacing-2xl: 4rem;
+  
+  /* Typography */
+  --font-primary: 'Orbitron', 'Roboto', sans-serif;
+  --font-secondary: 'Rajdhani', 'Arial', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  
+  /* Breakpoints */
+  --mobile: 320px;
+  --tablet: 768px;
+  --desktop: 1024px;
+  --large: 1200px;
+}
+
+/* Gaming Animation Keyframes */
+@keyframes neonGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px var(--neon-blue), 0 0 10px var(--neon-blue), 0 0 15px var(--neon-blue);
+  }
+  50% {
+    box-shadow: 0 0 10px var(--neon-blue), 0 0 20px var(--neon-blue), 0 0 30px var(--neon-blue);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
