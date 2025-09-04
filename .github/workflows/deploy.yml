@@ -12,16 +12,20 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Aquí instala lftp, un cliente FTP
       - name: Install lftp
         run: sudo apt-get install lftp
 
-      # Subir archivos por FTP (ajusta el directorio si sólo quieres subir /dist o /build)
+      - name: Install dependencies and build project
+        run: |
+          cd frontend/infinity-gaming
+          npm install
+          npm run build
+
       - name: Deploy to FTP
         run: |
           lftp -c "set ftp:list-options -a;
                    open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ${{ secrets.FTP_SERVER }};
-                   mirror -R ./dist ./"
+                   mirror -R frontend/infinity-gaming/dist ./"
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
